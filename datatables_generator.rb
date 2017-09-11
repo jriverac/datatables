@@ -5,7 +5,6 @@ class DatatablesGenerator < Rails::Generators::Base
 
   def generate_init
     @skip_columns = skip.split(',').map(&:lstrip)
-    binding.pry
     @model = model
     @the_model = Object.const_get "#{model}"
   end

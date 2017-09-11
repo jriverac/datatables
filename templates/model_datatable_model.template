@@ -1,9 +1,9 @@
-%tr{:id => "<%= model%>_datatable_row_#{<%= model%>.id}"}
+%tr{:id => "<%= model.underscore%>_datatable_row_#{<%= model.underscore %>.id}"}
   <%- @the_model.column_names.each do | column | -%>
     <%- unless @skip_columns.include?(column) -%>
   %td
-    = <%= model %>.<%= column %>
+    = <%= model.underscore %>.<%= column %>
     <%- end -%>
   <%- end -%>
   %td
-    = link_to t('edit'), edit_<%= model %>_path(<%= model %>), class: 'btn btn-primary btn-sm'
+    = link_to t('edit'), edit_<%= model.underscore %>_path(<%= model.underscore %>), class: 'btn btn-primary btn-sm'

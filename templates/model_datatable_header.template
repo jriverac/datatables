@@ -3,7 +3,7 @@
     <%- @the_model.column_names.each do | column | -%>
       <%- unless @skip_columns.include?(column) -%>
     %th
-      = t('activerecord.attributes.<%= model %>.<%= column %>')
+      = t('activerecord.attributes.<%= model.underscore %>.<%= column %>')
       <%- end -%>
     <%- end -%>
     %th

@@ -2,7 +2,10 @@ Description:
     Explain the generator
 
 Example:
-    rails generate datatables Thing
+    rails generate datatables Client "state, city"
 
-    This will create:
-        what/will/it/create
+    This will create the following partials:
+        app/views/clients/_datatable_client.html.haml
+        app/views/clients/_datatable_table.html.haml
+        app/views/clients/_datatable_header.html.haml
+        app/views/clients/_datatable_footer.html.haml
