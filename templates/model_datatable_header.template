@@ -1,10 +1,9 @@
 %thead
   %tr
-    <%- the_model = Object.const_get "#{model.titlecase}" -%>
-    <%- the_model.column_names.each do | column | -%>
+    <%- @the_model.column_names.each do | column | -%>
       <%- unless @skip_columns.include?(column) -%>
     %th
-      = t('<%= column %>')
+      = t('activerecord.attributes.<%= model %>.<%= column %>')
       <%- end -%>
     <%- end -%>
     %th

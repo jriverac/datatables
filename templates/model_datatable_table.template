@@ -1,6 +1,6 @@
-%table.table.table-striped#<%= model%>-datatable
-  = render partial: '<%= "#{model.pluralize}/datatable_header"%>'
-  = render partial: '<%= "#{model.pluralize}/datatable_footer"%>'
+%table.table.table-striped#<%= model.underscore %>-datatable
+  = render partial: '<%= "#{model.pluralize.underscore}/datatable_header"%>'
+  = render partial: '<%= "#{model.pluralize.underscore}/datatable_footer"%>'
   %tbody
-    - @<%= model.pluralize%>.each do | <%= model %> |
-      = render partial: '<%= "#{model.pluralize}/datatable_#{model}"%>', locals: {<%= "#{model}"%>: <%= "#{model}"%>}
+    - @<%= model.pluralize.underscore %>.each do | <%= model.underscore %> |
+      = render partial: '<%= "#{model.pluralize.underscore}/datatable_#{model.underscore}"%>', locals: {<%= "#{model.underscore}"%>: <%= "#{model.underscore}"%>}

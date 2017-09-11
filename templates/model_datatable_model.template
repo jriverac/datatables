@@ -1,6 +1,5 @@
 %tr{:id => "<%= model%>_datatable_row_#{<%= model%>.id}"}
-  <%- the_model = Object.const_get "#{model.titlecase}" -%>
-  <%- the_model.column_names.each do | column | -%>
+  <%- @the_model.column_names.each do | column | -%>
     <%- unless @skip_columns.include?(column) -%>
   %td
     = <%= model %>.<%= column %>
