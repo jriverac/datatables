@@ -1,0 +1,10 @@
+%tr{:id => "<%= model%>_datatable_row_#{<%= model%>.id}"}
+  <%- the_model = Object.const_get "#{model.titlecase}" -%>
+  <%- the_model.column_names.each do | column | -%>
+    <%- unless @skip_columns.include?(column) -%>
+  %td
+    = <%= model %>.<%= column %>
+    <%- end -%>
+  <%- end -%>
+  %td
+    = link_to t('edit'), edit_<%= model %>_path(<%= model %>), class: 'btn btn-primary btn-sm'

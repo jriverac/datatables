@@ -1,0 +1,6 @@
+%table.table.table-striped#<%= model%>-datatable
+  = render partial: '<%= "#{model.pluralize}/datatable_header"%>'
+  = render partial: '<%= "#{model.pluralize}/datatable_footer"%>'
+  %tbody
+    - @<%= model.pluralize%>.each do | <%= model %> |
+      = render partial: '<%= "#{model.pluralize}/datatable_#{model}"%>', locals: {<%= "#{model}"%>: <%= "#{model}"%>}
