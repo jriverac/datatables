@@ -5,7 +5,7 @@ class DatatablesGenerator < Rails::Generators::Base
   argument :include_columns, type: :string
 
   def generate_init
-    @include_columns = include.split(',').map(&:lstrip)
+    @include_columns = include_columns.split(',').map(&:lstrip)
     @detail_link_column = detail_link_column.to_s
     @model = model.to_s
     @the_model = Object.const_get model.to_s
