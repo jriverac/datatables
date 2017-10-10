@@ -7,4 +7,4 @@
       <%- end -%>
     <%- end -%>
     %th
-      Acciones
+      = t('actions')
