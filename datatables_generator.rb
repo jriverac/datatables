@@ -1,12 +1,14 @@
 class DatatablesGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
   argument :model, type: :string
-  argument :skip, type: :string
+  argument :detail_link_column, type: :string
+  argument :include_columns, type: :string
 
   def generate_init
-    @skip_columns = skip.split(',').map(&:lstrip)
-    @model = model
-    @the_model = Object.const_get "#{model}"
+    @include_columns = include.split(',').map(&:lstrip)
+    @detail_link_column = detail_link_column.to_s
+    @model = model.to_s
+    @the_model = Object.const_get model.to_s
   end
 
   def generate_model

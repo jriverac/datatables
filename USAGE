@@ -1,5 +1,8 @@
 Description:
-    Explain the generator
+    This generator will create a set of partials that will display a Bootstrap 4
+    and Ajax compatible datatable for the specified Rails Model.
+
+
 
 Example:
     rails generate datatables Client "state, city"

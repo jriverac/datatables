@@ -1,8 +1,11 @@
 %tr{:id => "<%= model.underscore%>_datatable_row_#{<%= model.underscore %>.id}"}
-  <%- @the_model.column_names.each do | column | -%>
-    <%- unless @skip_columns.include?(column) -%>
+  <%- @include_columns.each do |column_name| -%>
+    <%- if @the_model.column_names.include?(column_name) -%>
   %td
-    = <%= model.underscore %>.<%= column %>
+    - if column_name == @detail_link_column
+      = <%= model.underscore %>.<%= column_name %>
+    - else
+      = <%= model.underscore %>.<%= column_name %>
     <%- end -%>
   <%- end -%>
   %td
