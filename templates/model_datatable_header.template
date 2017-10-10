@@ -1,9 +1,9 @@
 %thead
   %tr
-    <%- @the_model.column_names.each do | column | -%>
-      <%- unless @skip_columns.include?(column) -%>
+    <%- @include_columns.each do |column_name| -%>
+      <%- if @the_model.column_names.include?(column_name) -%>
     %th
-      = t('activerecord.attributes.<%= model.underscore %>.<%= column %>')
+      = t('activerecord.attributes.<%= model.underscore %>.<%= column_name %>')
       <%- end -%>
     <%- end -%>
     %th

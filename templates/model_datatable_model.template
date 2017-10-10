@@ -2,10 +2,11 @@
   <%- @include_columns.each do |column_name| -%>
     <%- if @the_model.column_names.include?(column_name) -%>
   %td
-    - if column_name == @detail_link_column
-      = <%= model.underscore %>.<%= column_name %>
-    - else
-      = <%= model.underscore %>.<%= column_name %>
+      <%- if column_name == @detail_link_column -%>
+    = link_to <%= model.underscore %>.<%= column_name %>, <%= model.underscore %>_path(<%= model.underscore %>)
+      <%- else -%>
+    = <%= model.underscore %>.<%= column_name %>
+      <%- end -%>
     <%- end -%>
   <%- end -%>
   %td
