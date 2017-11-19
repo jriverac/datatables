@@ -9,7 +9,7 @@ Params:
     include_columns     List of Model columns to add.
 
 Example:
-    rails generate datatables Client "state, city"
+    rails generate datatables Client "name" "name, phone, email"
 
     This will create the following partials:
         app/views/clients/_datatable_client.html.haml
