@@ -2,5 +2,5 @@
   = render partial: '<%= "#{model.pluralize.underscore}/datatable_header"%>', locals: { presenter: @presenter }
   = render partial: '<%= "#{model.pluralize.underscore}/datatable_footer"%>', locals: { presenter: @presenter }
   %tbody
-    - @<%= model.pluralize.underscore %>.each do | <%= model.underscore %> |
+    - @presenter.<%= model.pluralize.underscore %>.each do | <%= model.underscore %> |
       = render partial: '<%= "#{model.pluralize.underscore}/datatable_#{model.underscore}"%>', locals: { presenter: <%= "#{ @model}"%>Presenter}
